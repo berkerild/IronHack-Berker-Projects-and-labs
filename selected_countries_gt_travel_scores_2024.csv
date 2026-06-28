@@ -1,0 +1,31 @@
+country,country_code,year,travel_interest_score
+United States,USA,2024,50.0
+China,CHN,2024,22.0
+Germany,DEU,2024,14.0
+Japan,JPN,2024,6.0
+India,IND,2024,18.0
+United Kingdom,GBR,2024,69.0
+France,FRA,2024,10.0
+Italy,ITA,2024,11.0
+Canada,CAN,2024,50.0
+Brazil,BRA,2024,5.0
+Russian Federation,RUS,2024,4.0
+"Korea, Rep.",KOR,2024,28.0
+Mexico,MEX,2024,8.0
+Australia,AUS,2024,63.0
+Spain,ESP,2024,14.0
+Indonesia,IDN,2024,15.0
+Turkiye,TUR,2024,9.0
+Saudi Arabia,SAU,2024,13.0
+Netherlands,NLD,2024,20.0
+Switzerland,CHE,2024,24.0
+Poland,POL,2024,13.0
+Belgium,BEL,2024,15.0
+Argentina,ARG,2024,8.0
+Ireland,IRL,2024,59.0
+Sweden,SWE,2024,15.0
+United Arab Emirates,ARE,2024,46.0
+Singapore,SGP,2024,83.0
+Israel,ISR,2024,16.0
+Austria,AUT,2024,14.0
+Thailand,THA,2024,12.0
