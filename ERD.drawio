@@ -1,0 +1,44 @@
+<mxfile host="app.diagrams.net" modified="2026-07-11T00:00:00.000Z" agent="Claude" version="24.0.0">
+  <diagram name="ERD - GoogleApps" id="erd-googleapps">
+    <mxGraphModel dx="1000" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- categories table -->
+        <mxCell id="categories" value="&lt;b&gt;categories&lt;/b&gt;&lt;br&gt;&lt;i&gt;lookup table&lt;/i&gt;&lt;hr&gt;&lt;b&gt;PK&lt;/b&gt;  category_id : INT&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;category_name : VARCHAR(50)"
+          style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fontSize=12;spacingLeft=10;spacingTop=8;fillColor=#dae8fc;strokeColor=#6c8ebf;"
+          vertex="1" parent="1">
+          <mxGeometry x="40" y="140" width="240" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- apps table -->
+        <mxCell id="apps" value="&lt;b&gt;apps&lt;/b&gt;&lt;br&gt;&lt;i&gt;core entity&lt;/i&gt;&lt;hr&gt;&lt;b&gt;PK&lt;/b&gt;  app_id : INT&lt;br&gt;&lt;b&gt;FK&lt;/b&gt;  category_id : INT&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;app_name : VARCHAR(200)&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;rating : FLOAT&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;reviews_count : INT&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;size : VARCHAR(20)&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;installs : INT&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;type : VARCHAR(10)&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;price : FLOAT&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;content_rating : VARCHAR(20)&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;last_updated : VARCHAR(20)&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;current_version : VARCHAR(100)&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;android_version : VARCHAR(20)"
+          style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fontSize=12;spacingLeft=10;spacingTop=8;fillColor=#d5e8d4;strokeColor=#82b366;"
+          vertex="1" parent="1">
+          <mxGeometry x="400" y="40" width="280" height="320" as="geometry" />
+        </mxCell>
+
+        <!-- reviews table -->
+        <mxCell id="reviews" value="&lt;b&gt;reviews&lt;/b&gt;&lt;br&gt;&lt;i&gt;sentiment data&lt;/i&gt;&lt;hr&gt;&lt;b&gt;PK&lt;/b&gt;  review_id : INT&lt;br&gt;&lt;b&gt;FK&lt;/b&gt;  app_id : INT&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;translated_review : TEXT&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;sentiment : VARCHAR(10)&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;sentiment_polarity : FLOAT&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;sentiment_subjectivity : FLOAT"
+          style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fontSize=12;spacingLeft=10;spacingTop=8;fillColor=#ffe6cc;strokeColor=#d79b00;"
+          vertex="1" parent="1">
+          <mxGeometry x="760" y="140" width="260" height="160" as="geometry" />
+        </mxCell>
+
+        <!-- categories to apps (one to many) -->
+        <mxCell id="edge1" value="1 : N" style="edgeStyle=entityRelationEdgeStyle;rounded=0;html=1;startArrow=ERone;startFill=0;endArrow=ERmany;endFill=0;fontSize=11;"
+          edge="1" parent="1" source="categories" target="apps">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- apps to reviews (one to many) -->
+        <mxCell id="edge2" value="1 : N" style="edgeStyle=entityRelationEdgeStyle;rounded=0;html=1;startArrow=ERone;startFill=0;endArrow=ERmany;endFill=0;fontSize=11;"
+          edge="1" parent="1" source="apps" target="reviews">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
